@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Button extends StatelessWidget {
-  Button({
-    Key? key,
-    required this.value,
-    required this.funct,
-  }) : super(key: key);
+class DeleteButton extends StatelessWidget {
+  DeleteButton({Key? key, required this.value, required this.funct})
+      : super(key: key);
 
   final String value;
   final Function funct;
@@ -21,8 +18,10 @@ class Button extends StatelessWidget {
             child: Text(
               value,
               style: GoogleFonts.montserrat(
-                  fontSize: 30, fontWeight: FontWeight.w400),
+                  fontSize: 30,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.green[300]),
             )),
-        onPressed: () => value == '=' ? funct() : funct(value));
+        onPressed: () => value == 'C' ? funct() : funct(value));
   }
 }
